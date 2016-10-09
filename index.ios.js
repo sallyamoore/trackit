@@ -12,19 +12,30 @@ import {
   View
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 class trackit extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
+        <Text style={styles.title}>
+          Welcome to TrackIt!
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+        <Icon
+          name='play-circle'
+          size={70}
+          color='#000000'
+        />
+        <Text style={styles.subtitle}>
+          track
         </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+        <Icon
+          name='line-chart'
+          size={70}
+          color='#000000'
+        />
+        <Text style={styles.subtitle}>
+          analyze
         </Text>
       </View>
     );
@@ -38,12 +49,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
+  title: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
   },
-  instructions: {
+  subtitle: {
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
