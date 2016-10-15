@@ -5,14 +5,30 @@
  */
 
 import React, { Component } from 'react';
-import { AppRegistry } from 'react-native';
+import { AppRegistry, Navigator, Text, View } from 'react-native';
 
-import Welcome from './Welcome';
+import Welcome from './components/Welcome';
+import Record from './components/Record';
+import { styles } from './components/Styles';
 
 
 class trackit extends Component {
+  renderScene(route, navigator) {
+    if(route.name === 'welcome') {
+      return <Welcome navigator={navigator} {...route.passProps}/>;
+    }
+    if(route.name === 'record') {
+      return <Record navigator={navigator} {...route.passProps}/>;
+    }
+  }
+
   render() {
-    return <Welcome />
+    return (
+      <Navigator
+        initialRoute={{name: 'welcome'}}
+        renderScene={this.renderScene}
+      />
+    );
   }
 }
 
