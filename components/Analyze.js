@@ -4,12 +4,12 @@ import { Text, View } from 'react-native';
 import { styles } from './Styles';
 import TopNavigation from './TopNavigation';
 
-export default class Record extends Component {
+export default class Analyze extends Component {
   render() {
     return (
       <View style={styles.containerWithNav}>
         <TopNavigation navigator={this.props.navigator} />
-        <Text style={styles.title}>Record Here!</Text>
+        <Text style={styles.title}>Analyze!</Text>
       </View>
     )
   }

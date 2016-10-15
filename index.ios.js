@@ -1,15 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
-import { AppRegistry, Navigator, Text, View } from 'react-native';
+import { AppRegistry, Navigator } from 'react-native';
 
-import Welcome from './components/Welcome';
+import Analyze from './components/Analyze';
 import Record from './components/Record';
-import { styles } from './components/Styles';
+import Welcome from './components/Welcome';
 
 
 class trackit extends Component {
@@ -19,6 +13,9 @@ class trackit extends Component {
     }
     if(route.name === 'record') {
       return <Record navigator={navigator} {...route.passProps}/>;
+    }
+    if(route.name === 'analyze') {
+      return <Analyze navigator={navigator} {...route.passProps}/>;
     }
   }
 
